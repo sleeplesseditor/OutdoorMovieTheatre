@@ -3,17 +3,24 @@ import {
   AppRegistry,
   asset,
   Pano,
-  Text,
+  Sound,
   View,
 } from 'react-vr';
-import MainMenu from './Components/Scenes/MainMenu';
 
 export default class OutdoorMovieTheater extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('fort-night.jpg')}/>
-        <MainMenu/>
+        <Pano 
+          source={asset('fort-night.jpg')}
+        >  
+          <Sound
+            volume={0.8}
+            loop = {true}
+            source={{mp3: asset('fort-night-atmosphere.mp3')}}
+          />
+        </Pano>
+        <MovieTheater/>
       </View>
     );
   }
